@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+    <head>
+        <title th:text="#{shipment.list.headline}" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="d-flex flex-wrap mb-4">
+                <h1 th:text="#{shipment.list.headline}" class="flex-grow-1" />
+                <div>
+                    <a th:href="@{/shipments/add}" th:text="#{shipment.list.createNew}" class="btn btn-primary ms-2" />
+                </div>
+            </div>
+            <div th:if="${shipments.empty}" th:text="#{shipment.list.empty}" />
+            <div th:if="${!shipments.empty}" class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th th:text="#{shipment.shipmentId.label}" scope="col" />
+                            <th th:text="#{shipment.orderId.label}" scope="col" />
+                            <th th:text="#{shipment.status.label}" scope="col" />
+                            <th th:text="#{shipment.parcelServiceName.label}" scope="col" />
+                            <th th:text="#{shipment.paymentMethod.label}" scope="col" />
+                            <th th:text="#{shipment.orderPrice.label}" scope="col" />
+                            <th th:text="#{shipment.trackingId.label}" scope="col" />
+                            <th th:text="#{shipment.deliveryDate.label}" scope="col" />
+                            <th><!-- --></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="shipment : ${shipments}">
+                            <td th:text="${shipment.shipmentId}" />
+                            <td th:text="${shipment.orderId}" />
+                            <td th:text="${shipment.status}" />
+                            <td th:text="${shipment.parcelServiceName}" />
+                            <td th:text="${shipment.paymentMethod}" />
+                            <td th:text="${shipment.orderPrice}" />
+                            <td th:text="${shipment.trackingId}" />
+                            <td th:text="${shipment.deliveryDate}" />
+                            <td>
+                                <form th:action="@{/shipments/delete/{shipmentId}(shipmentId=${shipment.shipmentId})}" th:data-confirm-message="#{delete.confirm}" method="post" class="js-submit-confirm float-end text-nowrap">
+                                    <a th:href="@{/shipments/edit/{shipmentId}(shipmentId=${shipment.shipmentId})}" th:text="#{shipment.list.edit}" class="btn btn-sm btn-info" />
+                                    <button th:text="#{shipment.list.delete}" type="submit" class="btn btn-sm btn-danger" />
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
