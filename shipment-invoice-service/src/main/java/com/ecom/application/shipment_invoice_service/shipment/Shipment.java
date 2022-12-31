@@ -1,15 +1,14 @@
-package com.ecom.application.order_inventory_service.order_item;
+package com.ecom.application.shipment_invoice_service.shipment;
 
-import com.ecom.application.order_inventory_service.order.Order;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,31 +21,36 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-public class OrderItem {
+public class Shipment {
 
     @Id
     @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long itemId;
+    private Long shipmentId;
+
+    @Column(nullable = false, unique = true)
+    private Long orderId;
 
     @Column(nullable = false)
-    private Integer quantity;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
     @Column(nullable = false)
-    private String sku;
+    @Enumerated(EnumType.STRING)
+    private ShippingMethods parcelServiceName;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
+
+    @Column(nullable = false)
+    private Double orderPrice;
+
+    @Column(unique = true)
+    private String trackingId;
 
     @Column
-    private Double subTotal;
-
-    @Column
-    private Double subTaxTotal;
-
-    @Column
-    private Double subDiscountTotal;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id", nullable = false)
-    private Order items;
+    private LocalDateTime deliveryDate;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

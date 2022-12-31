@@ -23,7 +23,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 @Entity
-@Table(name = "\"order\"")
+@Table(name = "orders")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
@@ -70,7 +70,7 @@ public class Order {
     private OrderType orderType;
 
     @OneToMany(mappedBy = "items")
-    private Set<OrderItem> itemsOrderItems;
+    private Set<OrderItem> items;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
