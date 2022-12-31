@@ -16,8 +16,8 @@
 	<description>Maven Parent</description>
 	<modules>
 		<module>../user-profile-service</module>
-		<!--module>ecom-common</module>
-		<module>order-inventory-service</module-->
+		<module>../order-inventory-service</module>
+		<!--module>order-inventory-service</module-->
 	</modules>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
