@@ -1,7 +1,15 @@
 package com.ecom.application.shipment_invoice_service.invoice;
 
-import com.ecom.application.shipment_invoice_service.shipment.PaymentMethod;
-import com.ecom.application.shipment_invoice_service.shipment.ShippingMethods;
+import java.time.OffsetDateTime;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.ecom.application.common.constants.OrderType;
+import com.ecom.application.common.constants.PaymentMethod;
+import com.ecom.application.common.constants.ShippingMethods;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -10,12 +18,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.OffsetDateTime;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 @Entity

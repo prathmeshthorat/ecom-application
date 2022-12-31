@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.ecom.application.user_profile_service.util.NotFoundException;
 
+import com.ecom.application.common.model.UserDTO;
+
 
 @Service
 public class UserService {

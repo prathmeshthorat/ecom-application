@@ -1,5 +1,6 @@
 package com.ecom.application.order_inventory_service.products;
 
+import com.ecom.application.common.model.ProductsDTO;
 import com.ecom.application.order_inventory_service.util.NotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;

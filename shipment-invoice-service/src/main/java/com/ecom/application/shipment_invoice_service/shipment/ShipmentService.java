@@ -1,5 +1,6 @@
 package com.ecom.application.shipment_invoice_service.shipment;
 
+import com.ecom.application.common.model.ShipmentDTO;
 import com.ecom.application.shipment_invoice_service.util.NotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;

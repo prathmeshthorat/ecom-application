@@ -1,5 +1,6 @@
 package com.ecom.application.order_inventory_service.products;
 
+import com.ecom.application.common.model.PromoCodes;
 import com.vladmihalcea.hibernate.type.json.JsonStringType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -26,6 +26,14 @@
                             <li class="navbar-item">
                                 <a th:href="@{/}" th:text="#{navigation.home}" class="nav-link" />
                             </li>
+                            <li class="navbar-item dropdown">
+                                <a th:text="#{navigation.entities}" class="nav-link dropdown-toggle" href="#" id="navbarEntitiesLink" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false" />
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarEntitiesLink">
+                                    <li><a th:href="@{/shipments}" th:text="#{shipment.list.headline}" class="dropdown-item" /></li>
+                                    <li><a th:href="@{/invoices}" th:text="#{invoice.list.headline}" class="dropdown-item" /></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </nav>

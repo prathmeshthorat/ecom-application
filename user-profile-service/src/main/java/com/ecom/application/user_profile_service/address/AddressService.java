@@ -10,6 +10,8 @@ import com.ecom.application.user_profile_service.user.User;
 import com.ecom.application.user_profile_service.user.UserRepository;
 import com.ecom.application.user_profile_service.util.NotFoundException;
 
+import com.ecom.application.common.model.AddressDTO;
+
 
 @Service
 public class AddressService {

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+    <head>
+        <title th:text="#{invoice.list.headline}" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="d-flex flex-wrap mb-4">
+                <h1 th:text="#{invoice.list.headline}" class="flex-grow-1" />
+                <div>
+                    <a th:href="@{/invoices/add}" th:text="#{invoice.list.createNew}" class="btn btn-primary ms-2" />
+                </div>
+            </div>
+            <div th:if="${invoices.empty}" th:text="#{invoice.list.empty}" />
+            <div th:if="${!invoices.empty}" class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th th:text="#{invoice.invoiceId.label}" scope="col" />
+                            <th th:text="#{invoice.orderId.label}" scope="col" />
+                            <th th:text="#{invoice.shippingMethod.label}" scope="col" />
+                            <th th:text="#{invoice.paymentMethod.label}" scope="col" />
+                            <th th:text="#{invoice.totalAmount.label}" scope="col" />
+                            <th th:text="#{invoice.type.label}" scope="col" />
+                            <th th:text="#{invoice.isPaid.label}" scope="col" />
+                            <th th:text="#{invoice.firstName.label}" scope="col" />
+                            <th><!-- --></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="invoice : ${invoices}">
+                            <td th:text="${invoice.invoiceId}" />
+                            <td th:text="${invoice.orderId}" />
+                            <td th:text="${invoice.shippingMethod}" />
+                            <td th:text="${invoice.paymentMethod}" />
+                            <td th:text="${invoice.totalAmount}" />
+                            <td th:text="${invoice.type}" />
+                            <td th:text="${invoice.isPaid}" />
+                            <td th:text="${invoice.firstName}" />
+                            <td>
+                                <form th:action="@{/invoices/delete/{invoiceId}(invoiceId=${invoice.invoiceId})}" th:data-confirm-message="#{delete.confirm}" method="post" class="js-submit-confirm float-end text-nowrap">
+                                    <a th:href="@{/invoices/edit/{invoiceId}(invoiceId=${invoice.invoiceId})}" th:text="#{invoice.list.edit}" class="btn btn-sm btn-info" />
+                                    <button th:text="#{invoice.list.delete}" type="submit" class="btn btn-sm btn-danger" />
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

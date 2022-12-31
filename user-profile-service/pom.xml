@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ecom.application</groupId>
     <artifactId>user-profile-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>user-profile-service</name>
 
     <properties>
@@ -51,6 +51,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+			<groupId>com.ecom.application</groupId>
+			<artifactId>ecom-common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
     </dependencies>
 
     <build>

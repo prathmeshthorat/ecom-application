@@ -9,13 +9,14 @@ import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
-import com.ecom.application.user_profile_service.user.Title;
+import com.ecom.application.common.constants.Title;
 import com.ecom.application.user_profile_service.user.User;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import com.ecom.application.common.constants.AddressType;
 
 
 @Document
