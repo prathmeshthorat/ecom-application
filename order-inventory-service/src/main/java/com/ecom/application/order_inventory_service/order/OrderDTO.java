@@ -13,8 +13,6 @@ public class OrderDTO {
 
     private Long orderId;
 
-    @NotNull
-    @Size(max = 255)
     private String cartId;
 
     private Long customerId;
@@ -27,7 +25,8 @@ public class OrderDTO {
 
     @NotNull
     private Boolean isPaid;
-
+    
+    @NotNull
     private OrderStatus status;
 
     @Valid

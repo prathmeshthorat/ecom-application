@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/orderItems", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/orderItems", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderItemResource {
 
     private final OrderItemService orderItemService;

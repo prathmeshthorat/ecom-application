@@ -6,6 +6,7 @@ public enum OrderType {
     FREE,
     ONE_TIME,
     SUBSCRIPTION,
-    REPLACEMENT
+    REPLACEMENT,
+    CART
 
 }

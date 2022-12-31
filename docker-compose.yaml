@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+  mysql-container:
+    image: mysql:latest
+    container_name: orderDb
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=ecomMicroservices
+      - MYSQL_DATABASE=order-inventory-service
+    expose:
+      - 3306
+    volumes:
+      - "mysql_data_container:/var/lib/mysql mysql:latest"
+  adminer_container:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql-container
+    ports:
+      - 8080:8080
+      
+volumes:
+  mysql_data_container:
+    driver: local
+
+networks:
+  ecom_microservices:
+    driver: bridge
