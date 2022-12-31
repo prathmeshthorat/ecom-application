@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ecom.application</groupId>
     <artifactId>order-inventory-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>order-inventory-service</name>
 
     <properties>
@@ -61,6 +61,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+			<groupId>com.ecom.application</groupId>
+			<artifactId>ecom-common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
     </dependencies>
 
     <build>

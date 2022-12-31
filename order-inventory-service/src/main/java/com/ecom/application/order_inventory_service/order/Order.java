@@ -1,5 +1,10 @@
 package com.ecom.application.order_inventory_service.order;
 
+import com.ecom.application.common.constants.OrderStatus;
+import com.ecom.application.common.constants.OrderType;
+import com.ecom.application.common.constants.PaymentMethod;
+import com.ecom.application.common.constants.ShippingMethods;
+import com.ecom.application.common.model.Comments;
 import com.ecom.application.order_inventory_service.order_item.OrderItem;
 import com.vladmihalcea.hibernate.type.json.JsonStringType;
 import jakarta.persistence.Column;

@@ -1,5 +1,6 @@
 package com.ecom.application.order_inventory_service.order_item;
 
+import com.ecom.application.common.model.OrderItemDTO;
 import com.ecom.application.order_inventory_service.order.Order;
 import com.ecom.application.order_inventory_service.order.OrderRepository;
 import com.ecom.application.order_inventory_service.util.NotFoundException;

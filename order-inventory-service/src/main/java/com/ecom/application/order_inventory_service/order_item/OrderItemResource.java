@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecom.application.common.model.OrderItemDTO;
+
 
 @RestController
 @RequestMapping(value = "/orderItems", produces = MediaType.APPLICATION_JSON_VALUE)
