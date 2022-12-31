@@ -1,0 +1,15 @@
+server:
+  port: 8500
+  servlet:
+    context-path: /api/profile
+
+spring:
+  application:
+    name: user-profile-service
+  data:
+    mongodb:
+      uri: mongodb+srv://ecom-microservice-users-service:WaOarHpdYWwfVgE2@ecom-microservice.9binydq.mongodb.net/?retryWrites=true&w=majority
+      database: ecom-microservice
+      auto-index-creation: true
+springdoc:
+  pathsToMatch: /api/**
